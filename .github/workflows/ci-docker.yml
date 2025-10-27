@@ -1,14 +1,12 @@
-name: CI/CD - Build and Push Docker Image
+name: CI Docker Build
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -27,4 +25,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: tecmayank/devops-demo:latest
+          tags: tecmayank/codespace-test:latest
